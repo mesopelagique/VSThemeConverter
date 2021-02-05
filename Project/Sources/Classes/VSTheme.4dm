@@ -61,7 +61,7 @@ Function to4DTheme()->$theme : cs:C1710.Theme
 	$theme["4D"].comments:=This:C1470.colorTokenForScope("comment").toStyle()
 	
 	
-	$theme["4D"].commands:=This:C1470.colorTokenForScope("constant.numeric.decimal.js markup.bold").toStyle()
+	$theme["4D"].commands:=This:C1470.colorTokenForScope("support.function constant.numeric.decimal.js markup.bold").toStyle()
 	$theme["4D"].constants:=This:C1470.colorTokenForScope("constant").toStyle()
 	$theme["4D"].entity_member:=This:C1470.colorTokenForScope("storage.type entity.name.section").toStyle()
 	$theme["4D"].errors:=This:C1470.colorForScope("editorError.foreground markup.heading").toStyle()
@@ -70,10 +70,10 @@ Function to4DTheme()->$theme : cs:C1710.Theme
 	$theme["4D"]["interprocess_variables"]:=This:C1470.colorTokenForScope("variable.language").toStyle()
 	
 	$theme["4D"].local_variables:=This:C1470.colorTokenForScope("variable").toStyle()
-	$theme["4D"].memberFunc:=This:C1470.colorTokenForScope("variable.function").toStyle()
-	$theme["4D"].methods:=This:C1470.colorTokenForScope("variable.function").toStyle()
+	$theme["4D"].memberFunc:=This:C1470.colorTokenForScope("entity.name.function variable.function").toStyle()
+	$theme["4D"].methods:=This:C1470.colorTokenForScope("meta.method variable.function").toStyle()
 	$theme["4D"].parameters:=This:C1470.colorTokenForScope("Variable").toStyle()
-	$theme["4D"].plain_text:=This:C1470.colorForScope("foreground").toStyle()
+	$theme["4D"].plain_text:=This:C1470.colorForScope("foreground editor.foreground").toStyle()
 	$theme["4D"].plug_ins:=This:C1470.colorTokenForScope("entity.name.tag").toStyle()
 	$theme["4D"].process_variables:=This:C1470.colorForScope("foreground").toStyle()
 	$theme["4D"].tables:=This:C1470.colorTokenForScope("entity.other.attribute-name").toStyle()
