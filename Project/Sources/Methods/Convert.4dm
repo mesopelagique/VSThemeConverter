@@ -9,6 +9,19 @@ End if
 var $themeText : Text
 $themeText:=$themeFile.getText()
 
+// remove comments
+$lines:=Split string:C1554($themeText; "\r")
+$themeText:=""
+
+For each ($line; $lines)
+	$ok:=(Position:C15("//"; rtrim($line))#1)
+	
+	If ($ok)
+		$themeText:=$themeText+$line+"\r"
+	End if 
+End for each 
+
+// remove trailing
 $themeText:=cs:C1710.JSONFix.new($themeText).run()
 
 
