@@ -8,6 +8,7 @@ Class constructor($object : Object)
 	This:C1470["JSON"]:=cs:C1710.LanguageJSON.new($object["JSON"])
 	This:C1470["SQL"]:=cs:C1710.LanguageSQL.new($object["SQL"])
 	This:C1470["otherStyles"]:=cs:C1710.Styles.new($object["otherStyles"])
+	This:C1470["__inheritedFrom__"]:=$object["__inheritedFrom__"]
 	
 	
 Function toObject()->$object : Object
@@ -20,3 +21,5 @@ Function toObject()->$object : Object
 	$object["JSON"]:=This:C1470["JSON"].toObject()
 	$object["SQL"]:=This:C1470["SQL"].toObject()
 	$object["otherStyles"]:=This:C1470["otherStyles"].toObject()
+	
+	$object["__inheritedFrom__"]:=This:C1470["__inheritedFrom__"]

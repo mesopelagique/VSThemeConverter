@@ -8,8 +8,13 @@ End if
 $resources:=$resources.folder("Resources")
 
 var $themeFile : 4D:C1709.File
-$themeFile:=$resources.folder("EditorTheme").file("defaultTheme.json")
 
+
+If (String:C10(This:C1470.type)="dark")
+	$themeFile:=$resources.folder("EditorTheme").file("defaultTheme.json")
+Else 
+	$themeFile:=$resources.folder("EditorTheme").file("defaultDarkTheme.json")
+End if 
 var $themeText : Text
 $themeText:=$themeFile.getText()
 
@@ -17,3 +22,9 @@ var $themeObject : Object
 $themeObject:=JSON Parse:C1218($themeFile.getText())
 
 $theme:=cs:C1710.Theme.new($themeObject)
+
+If (String:C10(This:C1470.type)="dark")
+	$theme["__inheritedFrom__"]:="defaultDarkTheme"
+Else 
+	$theme["__inheritedFrom__"]:="defaultTheme"
+End if 

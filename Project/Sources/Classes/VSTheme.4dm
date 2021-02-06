@@ -50,28 +50,23 @@ Function colorForScope($scopes : Text)->$token : Object
 	
 Function to4DTheme()->$theme : cs:C1710.Theme
 	
-	$theme:=DefaultTheme()
+	$theme:=DefaultTheme(String:C10(This:C1470.type))
 	
-	If (String:C10(This:C1470.type)="dark")
-		$theme["__inheritedFrom__"]:="defaultDarkTheme"
-	Else 
-		$theme["__inheritedFrom__"]:="defaultTheme"
-	End if 
 	
 	$theme["4D"].comments:=This:C1470.colorTokenForScope("comment").toStyle()
 	
 	
 	$theme["4D"].commands:=This:C1470.colorTokenForScope("support.function constant.numeric.decimal.js markup.bold").toStyle()
-	$theme["4D"].constants:=This:C1470.colorTokenForScope("constant").toStyle()
-	$theme["4D"].entity_member:=This:C1470.colorTokenForScope("storage.type entity.name.section").toStyle()
+	$theme["4D"].constants:=This:C1470.colorTokenForScope("constant.language constant").toStyle()
+	$theme["4D"].entity_member:=This:C1470.colorTokenForScope("variable.property storage.type entity.name.section").toStyle()
 	$theme["4D"].errors:=This:C1470.colorForScope("editorError.foreground markup.heading").toStyle()
 	$theme["4D"].fields:=This:C1470.colorTokenForScope("entity.name.tag").toStyle()
 	$theme["4D"]["indexed-fields"]:=This:C1470.colorTokenForScope("string.template").toStyle()
 	$theme["4D"]["interprocess_variables"]:=This:C1470.colorTokenForScope("variable.language").toStyle()
 	
 	$theme["4D"].local_variables:=This:C1470.colorTokenForScope("variable").toStyle()
-	$theme["4D"].memberFunc:=This:C1470.colorTokenForScope("entity.name.function variable.function").toStyle()
-	$theme["4D"].methods:=This:C1470.colorTokenForScope("meta.method variable.function").toStyle()
+	$theme["4D"].memberFunc:=This:C1470.colorTokenForScope("support.function entity.name.function variable.function").toStyle()
+	$theme["4D"].methods:=This:C1470.colorTokenForScope("meta.method variable.function support.function").toStyle()
 	$theme["4D"].parameters:=This:C1470.colorTokenForScope("Variable").toStyle()
 	$theme["4D"].plain_text:=This:C1470.colorForScope("foreground editor.foreground").toStyle()
 	$theme["4D"].plug_ins:=This:C1470.colorTokenForScope("entity.name.tag").toStyle()
@@ -102,7 +97,7 @@ Function to4DTheme()->$theme : cs:C1710.Theme
 	$theme["SQL"].commands:=This:C1470.colorTokenForScope("variable").toStyle()
 	$theme["SQL"].comparisons:=This:C1470.colorTokenForScope("comment").toStyle()
 	$theme["SQL"].debug:=This:C1470.colorTokenForScope("comment").toStyle()
-	$theme["SQL"].function_keywords:=This:C1470.colorTokenForScope("variable.function").toStyle()
+	$theme["SQL"].function_keywords:=This:C1470.colorTokenForScope("support.function variable.function").toStyle()
 	$theme["SQL"].keywords:=This:C1470.colorTokenForScope("keyword").toStyle()
 	$theme["SQL"].names:=This:C1470.colorTokenForScope("variable").toStyle()
 	$theme["SQL"].normal:=This:C1470.colorTokenForScope("foreground").toStyle()
