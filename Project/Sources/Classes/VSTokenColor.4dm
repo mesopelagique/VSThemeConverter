@@ -26,14 +26,10 @@ Function toFontStyle()->$style : cs:C1710.FontStyle
 	
 	$fontStyle:=String:C10(This:C1470.settings.fontStyle)  // XXX check if only string or could be a collection
 	
-	Case of 
-		: ($fontStyle="italic")
-			$style.italic:=True:C214
-		: ($fontStyle="bold")
-			$style.bold:=True:C214
-		Else 
-			// othin
-	End case 
+	$style.bold:=Position:C15("bold"; $fontStyle)>0
+	$style.italic:=Position:C15("italic"; $fontStyle)>0
+	$style.underline:=Position:C15("underline"; $fontStyle)>0
+	
 	
 Function getColor()->$color : Text
 	$color:=String:C10(This:C1470.settings.foreground)

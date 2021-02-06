@@ -10,15 +10,11 @@ If (Not:C34($dst.exists))
 	$dst.create()
 End if 
 
-$col:=Folder:C1567(fk resources folder:K87:11).folder("vs").folders()
-$col.push(Folder:C1567(fk resources folder:K87:11).folder("vs"))
-For each ($folder; $col)
-	
-	$files:=FindJSONTheme($folder)
-	For each ($file; $files)
-		Convert($file; $dst/*.folder($folder.name)*/)
-	End for each 
-	
+$vs:=Folder:C1567(fk resources folder:K87:11).folder("vs")
+
+$files:=FindJSONTheme($vs; True:C214)
+For each ($file; $files)
+	Convert($file; $dst/*.folder($folder.name)*/)
 End for each 
 
 SHOW ON DISK:C922($dst.platformPath)
