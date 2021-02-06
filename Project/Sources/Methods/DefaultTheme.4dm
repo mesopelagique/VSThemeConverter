@@ -21,6 +21,16 @@ $themeText:=$themeFile.getText()
 var $themeObject : Object
 $themeObject:=JSON Parse:C1218($themeFile.getText())
 
+$current:=GetCurrentThemeFile
+If ($current.exists)
+	$current:=JSON Parse:C1218($current.getText())
+	$themeObject.fontName:=$current.fontName
+	$themeObject.fontSize:=Int:C8($current.fontSize)
+	If ($themeObject.fontSize=0)
+		$themeObject.fontSize:=12
+	End if 
+End if 
+
 $theme:=cs:C1710.Theme.new($themeObject)
 
 If (String:C10(This:C1470.type)="dark")
@@ -28,3 +38,4 @@ If (String:C10(This:C1470.type)="dark")
 Else 
 	$theme["__inheritedFrom__"]:="defaultTheme"
 End if 
+

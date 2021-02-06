@@ -29,6 +29,7 @@
 	},
 	"VS": {
 		"methods": [
+			"GetCurrentThemeFile",
 			"test_vs"
 		],
 		"classes": [
