@@ -9,15 +9,29 @@ End if
 var $themeText : Text
 $themeText:=$themeFile.getText()
 
+$themeText:=Replace string:C233($themeText; Char:C90(9); "")
 // remove comments
 $lines:=Split string:C1554($themeText; "\r")
 $themeText:=""
 
 For each ($line; $lines)
-	$ok:=(Position:C15("//"; rtrim($line))#1)
-	
+	$ok:=(Position:C15("//"; rtrim($line))#1)  // no start comment
 	If ($ok)
-		$themeText:=$themeText+$line+"\r"
+		
+		$pos:=Position:C15("//"; $line)
+		If ($pos=0)
+			$themeText:=$themeText+$line+"\r"
+			
+		Else 
+			
+			If (Position:C15("\","; $line)>$pos)
+				$themeText:=$themeText+$line+"\r"
+			Else 
+				$themeText:=$themeText+Substring:C12($line; 0; $pos-1)+"\r"
+				
+			End if 
+		End if 
+		
 	End if 
 End for each 
 

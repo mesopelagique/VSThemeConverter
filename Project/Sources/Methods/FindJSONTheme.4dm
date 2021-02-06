@@ -1,6 +1,6 @@
 //%attributes = {}
 
-#DECLARE($folder : 4D:C1709.Folder; $recu : Boolean)->$themeFiles : Collection
+#DECLARE($folder : 4D:C1709.Folder; $deepth : Integer)->$themeFiles : Collection
 
 $themeFiles:=New collection:C1472()
 // TODO instead read Package.json to find theme files and return it
@@ -15,9 +15,9 @@ For each ($file; $folder.files())
 	End if 
 End for each 
 
-If (Bool:C1537($recu))
+If ($deepth>0)
 	For each ($subdolfer; $folder.folders())
-		For each ($file; FindJSONTheme($subdolfer; False:C215)  // only one level for the omment
+		For each ($file; FindJSONTheme($subdolfer; $deepth-1)  // only one level for the omment
 			$themeFiles.push($file)
 		End for each 
 	End for each 

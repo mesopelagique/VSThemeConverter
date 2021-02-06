@@ -21,7 +21,7 @@ If (Length:C16($url)>0)
 	
 	$dst:=Folder:C1567(fk editor theme folder:K87:23)
 	
-	For each ($theme; FindJSONTheme($tmp; True:C214))
+	For each ($theme; FindJSONTheme($tmp; 1))
 		
 		If ($copyInComponent)
 			
