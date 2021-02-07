@@ -47,12 +47,12 @@
         "commands": "variable",
         "back_color": "editor.background",
         "cursor_line_back_color": "foreground",
-        "cursor_line_color": "editorCursor.foreground foreground",
-        "execution_line_back_color": "comment",
-        "execution_line_frame_color": "comment",
-        "hilite_back_color": "editor.selectionBackground selection.background",
-        "hilite_block_back_color": "editor.selectionHighlightBackground",
-        "matching_parenthesis_back_color": "comment",
+        "cursor_line_color": "editor.selectionBackground",
+        "execution_line_back_color": "editor.selectionBackground",
+        "execution_line_frame_color": "editor.selectionBackground",
+        "hilite_back_color": "editor.lineHighlightBackground editor.selectionBackground selection.background",
+        "hilite_block_back_color": "editor.selectionHighlightBackground editor.lineHighlightBackground",
+        "matching_parenthesis_back_color": "focusBorder meta.decorator comment",
         "same_word_back_color": "comment",
         "suggestion_color": "comment"
     }
