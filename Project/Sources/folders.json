@@ -15,9 +15,25 @@
 			"Theme"
 		]
 	},
+	"Col": {},
+	"Str": {
+		"methods": [
+			"charAt",
+			"rtrim",
+			"test_rtrim"
+		]
+	},
+	"Theme": {
+		"methods": [
+			"DefaultTheme",
+			"GetCurrentThemeFile",
+			"GetCurrentThemeName",
+			"ShowThemes"
+		]
+	},
 	"VS": {
 		"methods": [
-			"GetCurrentThemeFile",
+			"FindJSONTheme",
 			"test_vs"
 		],
 		"classes": [
