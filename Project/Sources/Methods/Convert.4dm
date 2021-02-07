@@ -38,18 +38,24 @@ End for each
 // remove trailing
 $themeText:=cs:C1710.JSONFix.new($themeText).run()
 
-
+$onErr:=Method called on error:C704
+ON ERR CALL:C155("void")
 var $themeObject : Object
 $themeObject:=JSON Parse:C1218($themeText)
+ON ERR CALL:C155($onErr)
 
-var $theme : cs:C1710.VSTheme
-$theme:=cs:C1710.VSTheme.new($themeObject)
-
-
-var $dstTheme : cs:C1710.Theme
-$dstTheme:=$theme.to4DTheme()
-
-var $dstFile : 4D:C1709.File
-$dstFile:=$dst.file($themeFile.fullName)
-
-$dstFile.setText(JSON Stringify:C1217($dstTheme.toObject(); *))
+If ($themeObject#Null:C1517)
+	var $theme : cs:C1710.VSTheme
+	$theme:=cs:C1710.VSTheme.new($themeObject)
+	
+	
+	var $dstTheme : cs:C1710.Theme
+	$dstTheme:=$theme.to4DTheme()
+	
+	var $dstFile : 4D:C1709.File
+	$dstFile:=$dst.file($themeFile.fullName)
+	
+	$dstFile.setText(JSON Stringify:C1217($dstTheme.toObject(); *))
+Else 
+	ALERT:C41("Failed "+$themeFile.fullName)
+End if 

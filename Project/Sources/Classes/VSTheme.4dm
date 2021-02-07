@@ -48,71 +48,86 @@ Function colorForScope($scopes : Text)->$token : Object
 		$token:=cs:C1710.Empty.new()
 	End if 
 	
-Function to4DTheme()->$theme : cs:C1710.Theme
-	
-	$theme:=DefaultTheme(String:C10(This:C1470.type))
-	
-	
-	$theme["4D"].comments:=This:C1470.colorTokenForScope("comment").toStyle()
-	
-	
-	$theme["4D"].commands:=This:C1470.colorTokenForScope("support.function constant.numeric.decimal.js markup.bold").toStyle()
-	$theme["4D"].constants:=This:C1470.colorTokenForScope("constant.language constant").toStyle()
-	$theme["4D"].entity_member:=This:C1470.colorTokenForScope("variable.property storage.type entity.name.section").toStyle()
-	$theme["4D"].errors:=This:C1470.colorForScope("invalid editorError.foreground markup.heading").toStyle()
-	$theme["4D"].fields:=This:C1470.colorTokenForScope("entity.name.tag").toStyle()
-	$theme["4D"]["indexed-fields"]:=This:C1470.colorTokenForScope("string.template").toStyle()
-	$theme["4D"]["interprocess_variables"]:=This:C1470.colorTokenForScope("variable.language").toStyle()
-	
-	$theme["4D"].local_variables:=This:C1470.colorTokenForScope("variable").toStyle()
-	$theme["4D"].memberFunc:=This:C1470.colorTokenForScope("support.function entity.name.function variable.function").toStyle()
-	$theme["4D"].methods:=This:C1470.colorTokenForScope("meta.method variable.function support.function").toStyle()
-	$theme["4D"].parameters:=This:C1470.colorTokenForScope("Variable").toStyle()
-	$theme["4D"].plain_text:=This:C1470.colorForScope("foreground editor.foreground").toStyle()
-	$theme["4D"].plug_ins:=This:C1470.colorTokenForScope("entity.name.tag").toStyle()
-	$theme["4D"].process_variables:=This:C1470.colorForScope("foreground").toStyle()
-	$theme["4D"].tables:=This:C1470.colorTokenForScope("entity.other.attribute-name").toStyle()
-	$theme["4D"]["thread-safe-commands"]:=This:C1470.colorTokenForScope("comment").toStyle()
-	$theme["4D"]["thread-safe-methods"]:=This:C1470.colorTokenForScope("comment").toStyle()
-	
-	
-	If (False:C215)
-		$theme["4D"].keywords:=This:C1470.colorTokenForScope("keyword.other.unit").toStyle()
-		$theme["4D"].member:=This:C1470.colorTokenForScope("keyword").toStyle()
+Function apply($theme; $cat; $key; $vskey)
+	If ($cat="otherStyles")
+		$color:=This:C1470.colorForScope($vskey).toColor()
+		If ($color#Null:C1517)
+			$theme[$cat][$key]:=$color
+		End if 
 	Else 
-		$theme["4D"].keywords:=This:C1470.colorTokenForScope("keyword").toStyle()
-		$theme["4D"].member:=This:C1470.colorTokenForScope("keyword.other.unit").toStyle()
+		$style:=This:C1470.colorForScope($vskey).toStyle()
+		If ($style#Null:C1517)
+			$theme[$cat][$key]:=$style
+		End if 
 	End if 
 	
-	$theme["JSON"].commands:=This:C1470.colorTokenForScope("variable").toStyle()
-	$theme["JSON"].escapeSequences:=This:C1470.colorForScope("editorError.foreground markup.heading").toStyle()
-	$theme["JSON"].identifiers:=This:C1470.colorForScope("editorError.foreground markup.heading").toStyle()
-	$theme["JSON"].errors:=This:C1470.colorForScope("invalid editorError.foreground markup.heading").toStyle()
-	$theme["JSON"].keywords:=This:C1470.colorTokenForScope("keyword").toStyle()
-	$theme["JSON"].numbers:=This:C1470.colorTokenForScope("constant.numeric").toStyle()
-	$theme["JSON"].normal:=This:C1470.colorTokenForScope("foreground").toStyle()
-	$theme["JSON"].strings:=This:C1470.colorTokenForScope("string.quoted").toStyle()
+Function to4DTheme()->$theme : cs:C1710.Theme
+	$theme:=DefaultTheme(String:C10(This:C1470.type))
+	$mapping:=JSON Parse:C1218(Folder:C1567(fk resources folder:K87:11).file("mapping.json").getText())
+	For each ($cat; $mapping)
+		For each ($key; $mapping[$cat])
+			This:C1470.apply($theme; $cat; $key; $mapping[$cat][$key])
+		End for each 
+	End for each 
+/*
+$theme["4D"].comments:=This.colorTokenForScope("comment").toStyle()
+$theme["4D"].commands:=This.colorTokenForScope("support.function constant.numeric.decimal.js markup.bold").toStyle()
+$theme["4D"].constants:=This.colorTokenForScope("constant.language constant").toStyle()
+$theme["4D"].entity_member:=This.colorTokenForScope("variable.property storage.type entity.name.section").toStyle()
+$theme["4D"].errors:=This.colorForScope("invalid editorError.foreground markup.heading").toStyle()
+$theme["4D"].fields:=This.colorTokenForScope("entity.name.tag").toStyle()
+$theme["4D"]["indexed-fields"]:=This.colorTokenForScope("string.template").toStyle()
+$theme["4D"]["interprocess_variables"]:=This.colorTokenForScope("variable.language").toStyle()
+	
+$theme["4D"].local_variables:=This.colorTokenForScope("variable").toStyle()
+$theme["4D"].memberFunc:=This.colorTokenForScope("support.function entity.name.function variable.function").toStyle()
+$theme["4D"].methods:=This.colorTokenForScope("meta.method variable.function support.function").toStyle()
+$theme["4D"].parameters:=This.colorTokenForScope("Variable").toStyle()
+$theme["4D"].plain_text:=This.colorForScope("foreground editor.foreground").toStyle()
+$theme["4D"].plug_ins:=This.colorTokenForScope("entity.name.tag").toStyle()
+$theme["4D"].process_variables:=This.colorForScope("foreground").toStyle()
+$theme["4D"].tables:=This.colorTokenForScope("entity.other.attribute-name").toStyle()
+$theme["4D"]["thread-safe-commands"]:=This.colorTokenForScope("comment").toStyle()
+$theme["4D"]["thread-safe-methods"]:=This.colorTokenForScope("comment").toStyle()
 	
 	
-	$theme["SQL"].commands:=This:C1470.colorTokenForScope("variable").toStyle()
-	$theme["SQL"].comparisons:=This:C1470.colorTokenForScope("comment").toStyle()
-	$theme["SQL"].debug:=This:C1470.colorTokenForScope("comment").toStyle()
-	$theme["SQL"].function_keywords:=This:C1470.colorTokenForScope("support.function variable.function").toStyle()
-	$theme["SQL"].keywords:=This:C1470.colorTokenForScope("keyword").toStyle()
-	$theme["SQL"].names:=This:C1470.colorTokenForScope("variable").toStyle()
-	$theme["SQL"].normal:=This:C1470.colorTokenForScope("foreground").toStyle()
-	$theme["SQL"].numbers:=This:C1470.colorTokenForScope("constant.numeric").toStyle()
-	$theme["SQL"].strings:=This:C1470.colorTokenForScope("string.quoted").toStyle()
+If (False)
+$theme["4D"].keywords:=This.colorTokenForScope("keyword.other.unit").toStyle()
+$theme["4D"].member:=This.colorTokenForScope("keyword").toStyle()
+Else 
+$theme["4D"].keywords:=This.colorTokenForScope("keyword").toStyle()
+$theme["4D"].member:=This.colorTokenForScope("keyword.other.unit").toStyle()
+End if 
+	
+$theme["JSON"].commands:=This.colorTokenForScope("variable").toStyle()
+$theme["JSON"].escapeSequences:=This.colorForScope("editorError.foreground markup.heading").toStyle()
+$theme["JSON"].identifiers:=This.colorForScope("editorError.foreground markup.heading").toStyle()
+$theme["JSON"].errors:=This.colorForScope("invalid editorError.foreground markup.heading").toStyle()
+$theme["JSON"].keywords:=This.colorTokenForScope("keyword").toStyle()
+$theme["JSON"].numbers:=This.colorTokenForScope("constant.numeric").toStyle()
+$theme["JSON"].normal:=This.colorTokenForScope("foreground").toStyle()
+$theme["JSON"].strings:=This.colorTokenForScope("string.quoted").toStyle()
 	
 	
-	$theme["otherStyles"].commands:=This:C1470.colorTokenForScope("comment").toColor()
-	$theme["otherStyles"].back_color:=This:C1470.colorForScope("editor.background").toColor()
-	$theme["otherStyles"].cursor_line_back_color:=This:C1470.colorTokenForScope("foreground").toColor()
-	$theme["otherStyles"].cursor_line_color:=This:C1470.colorTokenForScope("editorCursor.foreground foreground").toColor()
-	$theme["otherStyles"].execution_line_back_color:=This:C1470.colorTokenForScope("comment").toColor()
-	$theme["otherStyles"].execution_line_frame_color:=This:C1470.colorTokenForScope("comment").toColor()
-	$theme["otherStyles"].hilite_back_color:=This:C1470.colorForScope("selection.background editor.selectionBackground").toColor()
-	$theme["otherStyles"].hilite_block_back_color:=This:C1470.colorTokenForScope("editor.selectionHighlightBackground").toColor()
-	$theme["otherStyles"].matching_parenthesis_back_color:=This:C1470.colorTokenForScope("comment").toColor()
-	$theme["otherStyles"].same_word_back_color:=This:C1470.colorTokenForScope("comment").toColor()
-	$theme["otherStyles"].suggestion_color:=This:C1470.colorTokenForScope("comment").toColor()
+$theme["SQL"].commands:=This.colorTokenForScope("variable").toStyle()
+$theme["SQL"].comparisons:=This.colorTokenForScope("comment").toStyle()
+$theme["SQL"].debug:=This.colorTokenForScope("comment").toStyle()
+$theme["SQL"].function_keywords:=This.colorTokenForScope("support.function variable.function").toStyle()
+$theme["SQL"].keywords:=This.colorTokenForScope("keyword").toStyle()
+$theme["SQL"].names:=This.colorTokenForScope("variable").toStyle()
+$theme["SQL"].normal:=This.colorTokenForScope("foreground").toStyle()
+$theme["SQL"].numbers:=This.colorTokenForScope("constant.numeric").toStyle()
+$theme["SQL"].strings:=This.colorTokenForScope("string.quoted").toStyle()
+	
+	
+$theme["otherStyles"].commands:=This.colorTokenForScope("comment").toColor()
+$theme["otherStyles"].back_color:=This.colorForScope("editor.background").toColor()
+$theme["otherStyles"].cursor_line_back_color:=This.colorTokenForScope("foreground").toColor()
+$theme["otherStyles"].cursor_line_color:=This.colorTokenForScope("editorCursor.foreground foreground").toColor()
+$theme["otherStyles"].execution_line_back_color:=This.colorTokenForScope("comment").toColor()
+$theme["otherStyles"].execution_line_frame_color:=This.colorTokenForScope("comment").toColor()
+$theme["otherStyles"].hilite_back_color:=This.colorForScope("selection.background editor.selectionBackground").toColor()
+$theme["otherStyles"].hilite_block_back_color:=This.colorTokenForScope("editor.selectionHighlightBackground").toColor()
+$theme["otherStyles"].matching_parenthesis_back_color:=This.colorTokenForScope("comment").toColor()
+$theme["otherStyles"].same_word_back_color:=This.colorTokenForScope("comment").toColor()
+$theme["otherStyles"].suggestion_color:=This.colorTokenForScope("comment").toColor()*/

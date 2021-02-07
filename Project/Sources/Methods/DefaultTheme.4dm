@@ -1,5 +1,5 @@
 //%attributes = {}
-#DECLARE()->$theme : cs:C1710.Theme
+#DECLARE($type : Text)->$theme : cs:C1710.Theme
 var $resources : 4D:C1709.Folder
 $resources:=Folder:C1567(Application file:C491; fk platform path:K87:2)
 If (Is macOS:C1572)
@@ -9,12 +9,12 @@ $resources:=$resources.folder("Resources")
 
 var $themeFile : 4D:C1709.File
 
-
-If (String:C10(This:C1470.type)="dark")
-	$themeFile:=$resources.folder("EditorTheme").file("defaultTheme.json")
-Else 
+If (String:C10($type)="dark")
 	$themeFile:=$resources.folder("EditorTheme").file("defaultDarkTheme.json")
+Else 
+	$themeFile:=$resources.folder("EditorTheme").file("defaultTheme.json")
 End if 
+
 var $themeText : Text
 $themeText:=$themeFile.getText()
 
@@ -33,9 +33,9 @@ End if
 
 $theme:=cs:C1710.Theme.new($themeObject)
 
-If (String:C10(This:C1470.type)="dark")
+If (String:C10($type)="dark")
 	$theme["__inheritedFrom__"]:="defaultDarkTheme"
 Else 
-	// $theme["__inheritedFrom__"]:="defaultTheme"
+	$theme["__inheritedFrom__"]:="defaultTheme"
 End if 
 

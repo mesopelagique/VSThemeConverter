@@ -1,0 +1,59 @@
+﻿{
+    "4D": {
+        "comment": "comment",
+        "comments": "comment",
+        "commands": "support.function constant.numeric.decimal.js markup.bold",
+        "constants": "constant.language constant",
+        "entity_member": "variable.property storage.type entity.name.section",
+        "errors": "invalid editorError.foreground markup.heading",
+        "fields": "entity.name.tag",
+        "indexed-fields": "string.template",
+        "interprocess_variables": "variable.language",
+        "local_variables": "variable",
+        "memberFunc": "support.function entity.name.function variable.function",
+        "methods": "meta.method variable.function support.function",
+        "parameters": "Variable",
+        "plain_text": "foreground editor.foreground",
+        "plug_ins": "entity.name.tag",
+        "process_variables": "foreground",
+        "tables": "entity.other.attribute-name",
+        "thread-safe-commands": "comment",
+        "thread-safe-methods": "comment",
+        "keywords": "keyword",
+        "member": "keyword.other.unit"
+    },
+    "JSON": {
+        "commands": "variable",
+        "escapeSequences": "editorError.foreground markup.heading",
+        "identifiers": "editorError.foreground markup.heading",
+        "errors": "invalid editorError.foreground markup.heading",
+        "keywords": "keyword",
+        "numbers": "constant.numeric",
+        "normal": "foreground",
+        "strings": "string.quoted"
+    },
+    "SQL": {
+        "commands": "variable",
+        "comparisons": "comment",
+        "debug": "comment",
+        "function_keywords": "support.function variable.function",
+        "keywords": "keyword",
+        "names": "variable",
+        "normal": "foreground",
+        "numbers": "constant.numeric",
+        "strings": "string.quoted"
+    },
+    "otherStyles": {
+        "commands": "variable",
+        "back_color": "editor.background",
+        "cursor_line_back_color": "foreground",
+        "cursor_line_color": "editorCursor.foreground foreground",
+        "execution_line_back_color": "comment",
+        "execution_line_frame_color": "comment",
+        "hilite_back_color": "editor.selectionBackground selection.background",
+        "hilite_block_back_color": "editor.selectionHighlightBackground",
+        "matching_parenthesis_back_color": "comment",
+        "same_word_back_color": "comment",
+        "suggestion_color": "comment"
+    }
+}
