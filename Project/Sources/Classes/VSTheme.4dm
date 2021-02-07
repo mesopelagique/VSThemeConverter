@@ -50,13 +50,13 @@ Function colorForScope($scopes : Text)->$token : Object
 	
 Function apply($theme; $cat; $key; $vskey)
 	If ($cat="otherStyles")
-		$color:=This:C1470.colorForScope($vskey).toColor()
-		If ($color#Null:C1517)
-			$theme[$cat][$key]:=$color
-		End if 
+		$style:=This:C1470.colorForScope($vskey).toColor()
 	Else 
 		$style:=This:C1470.colorForScope($vskey).toStyle()
-		If ($style#Null:C1517)
+	End if 
+	
+	If ($style#Null:C1517)
+		If (Length:C16($style.color)#0)
 			$theme[$cat][$key]:=$style
 		End if 
 	End if 
