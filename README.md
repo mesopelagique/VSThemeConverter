@@ -16,7 +16,7 @@ The result will be installed directly into your 4d theme folder
 
 Not all are converted correctly so you could edit convert code
 
-The mapping of vs code keys and 4d keys are defined in `to4DTheme` in file [mapping.json](Resources/mapping.json)
+The mapping of vs code keys and 4d keys are defined in file [mapping.json](Resources/mapping.json)
 
 ### Force a font
 
