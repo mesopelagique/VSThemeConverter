@@ -26,6 +26,6 @@ You could edit default font name by editing DefaultTheme method to defined your 
 
 ```4d
 $themeObject.fontSize:=18
-$themeObject.fontName:="Fire Code"
+$themeObject.fontName:="Fira Code"
 ```
 
