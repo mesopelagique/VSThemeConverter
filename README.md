@@ -10,9 +10,9 @@ Convert Visual Studio Code theme to 4D theme
 
 ## How to launch a convertion
 
-### Theme installed in yout vs code app
+### Theme installed in your Visual Studio Code app
 
-Launch the `YourVsTheme` form to select or convert all
+Launch the `YourVsTheme` form to convert all or select ones.
 
 or launch `FromVsCodeInstalled`
 
