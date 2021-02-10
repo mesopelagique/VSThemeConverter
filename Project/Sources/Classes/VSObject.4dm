@@ -2,7 +2,6 @@
 
 
 Function normalizeColor($color : Text)->$norm : Text
-	
 	Case of 
 		: (Length:C16($color)=0)
 			$norm:=""

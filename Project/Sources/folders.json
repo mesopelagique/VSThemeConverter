@@ -47,6 +47,7 @@
 			"DefaultTheme",
 			"GetCurrentThemeFile",
 			"GetCurrentThemeName",
+			"SetFontToAllTheme",
 			"ShowThemes"
 		]
 	},
