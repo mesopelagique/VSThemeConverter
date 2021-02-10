@@ -33,6 +33,10 @@ Function toFontStyle()->$style : cs:C1710.FontStyle
 	
 Function getColor()->$color : Text
 	$color:=String:C10(This:C1470.settings.foreground)
+	If (Length:C16($color)>7)
+		$color:=Substring:C12($color; 1; 7)
+	End if 
+	
 	
 	
 Function toStyle()->$style : cs:C1710.Style
