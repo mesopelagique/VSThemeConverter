@@ -1,0 +1,114 @@
+﻿{
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"windowSizingX": "variable",
+	"windowSizingY": "variable",
+	"windowMinWidth": 0,
+	"windowMinHeight": 0,
+	"windowMaxWidth": 32767,
+	"windowMaxHeight": 32767,
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"events": [
+		"onLoad",
+		"onPageChange",
+		"onValidate",
+		"onClick",
+		"onDoubleClick",
+		"onOutsideCall",
+		"onBeginDragOver",
+		"onDragOver",
+		"onDrop",
+		"onAfterKeystroke",
+		"onMenuSelect",
+		"onPluginArea",
+		"onAfterEdit",
+		"onTimer",
+		"onBoundVariableChange"
+	],
+	"windowTitle": "window title",
+	"destination": "detailScreen",
+	"pages": [
+		{
+			"objects": {}
+		},
+		{
+			"objects": {
+				"List Box": {
+					"type": "listbox",
+					"left": 22,
+					"top": 15,
+					"width": 530,
+					"height": 505,
+					"events": [],
+					"listboxType": "collection",
+					"dataSource": "Form:C1466.themes",
+					"method": "ObjectMethods/List Box.4dm",
+					"selectionMode": "multiple",
+					"selectedItemsSource": "Form:C1466.selected",
+					"columns": [
+						{
+							"header": {
+								"name": "Header2",
+								"text": "Extension"
+							},
+							"name": "Column2",
+							"dataSource": "This:C1470.archive.root.name",
+							"footer": {
+								"name": "Footer2"
+							},
+							"width": 256
+						},
+						{
+							"header": {
+								"text": "Path",
+								"name": "Header1"
+							},
+							"name": "File",
+							"footer": {
+								"name": "Footer1"
+							},
+							"dataSource": "This:C1470.theme.path",
+							"width": 256
+						}
+					]
+				},
+				"Button": {
+					"type": "button",
+					"text": "Convert All",
+					"top": 536,
+					"left": 172,
+					"width": 99,
+					"height": 29,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button.4dm"
+				},
+				"Button1": {
+					"type": "button",
+					"text": "Convert selected",
+					"top": 535,
+					"left": 22,
+					"width": 130,
+					"height": 30,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button1.4dm"
+				}
+			}
+		}
+	],
+	"method": "method.4dm",
+	"geometryStamp": 32,
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	}
+}
