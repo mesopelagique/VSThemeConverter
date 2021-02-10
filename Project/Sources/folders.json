@@ -10,12 +10,31 @@
 			"Language4D",
 			"LanguageJSON",
 			"LanguageSQL",
+			"Object",
 			"Style",
 			"Styles",
 			"Theme"
 		]
 	},
-	"Col": {},
+	"Col": {
+		"methods": [
+			"findInSubCol"
+		]
+	},
+	"Convert": {
+		"groups": [
+			"4D",
+			"VS"
+		],
+		"methods": [
+			"Convert"
+		]
+	},
+	"err": {
+		"methods": [
+			"void"
+		]
+	},
 	"Str": {
 		"methods": [
 			"charAt",
@@ -31,9 +50,19 @@
 			"ShowThemes"
 		]
 	},
+	"utils": {
+		"groups": [
+			"Col",
+			"err",
+			"Str"
+		],
+		"classes": [
+			"JSONFix"
+		]
+	},
 	"VS": {
 		"methods": [
-			"FindJSONTheme",
+			"FindVSThemeFiles",
 			"test_vs"
 		],
 		"classes": [

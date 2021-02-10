@@ -11,7 +11,7 @@ Case of
 			
 			If (Length:C16($file.name)>0)
 				$archive:=ZIP Read archive:C1637($file)
-				For each ($theme; FindJSONTheme($archive.root; 4))
+				For each ($theme; FindVSThemeFiles($archive.root; 4))
 					Form:C1466.themes.push(New object:C1471("archive"; $archive; "theme"; $theme))
 				End for each 
 			End if 

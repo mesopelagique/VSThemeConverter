@@ -17,7 +17,7 @@ End for each
 
 If ($deepth>0)
 	For each ($subdolfer; $folder.folders())
-		For each ($file; FindJSONTheme($subdolfer; $deepth-1)  // only one level for the omment
+		For each ($file; FindVSThemeFiles($subdolfer; $deepth-1)  // only one level for the omment
 			$themeFiles.push($file)
 		End for each 
 	End for each 

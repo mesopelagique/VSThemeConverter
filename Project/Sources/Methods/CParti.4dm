@@ -12,7 +12,7 @@ End if
 
 $vs:=Folder:C1567(fk resources folder:K87:11).folder("vs")
 
-$files:=FindJSONTheme($vs; 3)
+$files:=FindVSThemeFiles($vs; 3)
 For each ($file; $files)
 	Convert($file; $dst/*.folder($folder.name)*/)
 End for each 
