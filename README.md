@@ -51,6 +51,8 @@ $themeObject.fontSize:=18
 $themeObject.fontName:="Fira Code"
 ```
 
+or you could change all theme font using [SetFontToAllTheme](Project/Sources/Methods/SetFontToAllTheme.4dm)
+
 ## Limitations
 
 - color with alpha (RGBA) : alpha component is removed
