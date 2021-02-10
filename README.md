@@ -16,6 +16,8 @@ Launch the `YourVsTheme` form to select or convert all
 
 or launch `FromVsCodeInstalled`
 
+> Work only on macOS
+
 ### Theme on github
 
 Launch `GitURLRequest`. A prompt will ask you to paste the url.
