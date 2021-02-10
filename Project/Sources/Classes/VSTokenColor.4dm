@@ -1,3 +1,5 @@
+Class extends VSObject
+
 Class constructor($object : Object)
 	
 	This:C1470.name:=$object.name
@@ -33,10 +35,7 @@ Function toFontStyle()->$style : cs:C1710.FontStyle
 	
 Function getColor()->$color : Text
 	$color:=String:C10(This:C1470.settings.foreground)
-	If (Length:C16($color)>7)
-		$color:=Substring:C12($color; 1; 7)
-	End if 
-	
+	$color:=This:C1470.normalizeColor($color)
 	
 	
 Function toStyle()->$style : cs:C1710.Style

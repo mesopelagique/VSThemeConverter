@@ -39,6 +39,7 @@
 		"classes": [
 			"Empty",
 			"VSColor",
+			"VSObject",
 			"VSTheme",
 			"VSTokenColor"
 		]
