@@ -35,7 +35,7 @@ Function toFontStyle()->$style : cs:C1710.FontStyle
 	
 Function getColor()->$color : Text
 	$color:=String:C10(This:C1470.settings.foreground)
-	$color:=This:C1470.normalizeColor($color)
+	$color:=normalizeColor($color)
 	
 	
 Function toStyle()->$style : cs:C1710.Style

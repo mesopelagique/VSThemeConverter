@@ -13,10 +13,26 @@ Class constructor($object : Object)
 	This:C1470.tokenColors:=New collection:C1472()
 	
 	For each ($tokenColor; $object.tokenColors)
-		
-		This:C1470.tokenColors.push(cs:C1710.VSTokenColor.new($tokenColor))
-		
+		If (Value type:C1509($tokenColor)=Is object:K8:27)  // cold be string default, other string?
+			This:C1470.tokenColors.push(cs:C1710.VSTokenColor.new($tokenColor))
+		End if 
 	End for each 
+	
+	
+	If (Length:C16(String:C10(This:C1470.type))=0)
+		
+		$background:=This:C1470["colors"]["editor.background"]
+		If (Length:C16(String:C10($background))>0)
+			If ($background[[1]]="#")
+				If (brightnessByColor($background)<0.5)
+					This:C1470.type:="dark"
+				End if 
+				
+			End if 
+		End if 
+	End if 
+	
+	
 	
 Function colorTokenForScope($scopes : Text)->$token : Object
 	
@@ -62,6 +78,8 @@ Function apply($theme; $cat; $key; $vskey)
 	End if 
 	
 Function to4DTheme()->$theme : cs:C1710.Theme
+	
+	
 	$theme:=DefaultTheme(String:C10(This:C1470.type))
 	$mapping:=JSON Parse:C1218(Folder:C1567(fk resources folder:K87:11).file("mapping.json").getText())
 	For each ($cat; $mapping)

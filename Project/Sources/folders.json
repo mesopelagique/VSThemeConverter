@@ -21,6 +21,12 @@
 			"findInSubCol"
 		]
 	},
+	"color": {
+		"methods": [
+			"brightnessByColor",
+			"normalizeColor"
+		]
+	},
 	"Convert": {
 		"groups": [
 			"4D",
@@ -48,14 +54,19 @@
 			"GetCurrentThemeFile",
 			"GetCurrentThemeName",
 			"SetFontToAllTheme",
-			"ShowThemes"
+			"ShowThemes",
+			"ValidateThemes"
 		]
 	},
 	"utils": {
 		"groups": [
 			"Col",
+			"color",
 			"err",
 			"Str"
+		],
+		"methods": [
+			"hexToInt"
 		],
 		"classes": [
 			"JSONFix"

@@ -1,6 +1,5 @@
-﻿{
+{
     "4D": {
-        "comment": "comment",
         "comments": "comment",
         "commands": "support.function constant.numeric.decimal.js markup.bold",
         "constants": "constant.language constant",
@@ -23,7 +22,6 @@
         "member": "keyword.other.unit"
     },
     "JSON": {
-        "commands": "variable",
         "escapeSequences": "editorError.foreground markup.heading",
         "identifiers": "editorError.foreground markup.heading",
         "errors": "invalid editorError.foreground markup.heading",
@@ -33,7 +31,6 @@
         "strings": "string.quoted"
     },
     "SQL": {
-        "commands": "variable",
         "comparisons": "comment",
         "debug": "comment",
         "function_keywords": "support.function variable.function",
@@ -44,7 +41,6 @@
         "strings": "string.quoted"
     },
     "otherStyles": {
-        "commands": "variable",
         "back_color": "editor.background",
         "cursor_line_back_color": "foreground",
         "cursor_line_color": "editor.lineHighlightBackground editor.selectionBackground",

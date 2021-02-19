@@ -1,0 +1,737 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Theme Schemas",
+    "description": "4D theme schemas. This schemas should be used to validate any theme file located in 4DEditorTheme folder",
+    "definitions": {
+        "types": {
+            "color": {
+                "additionalProperties": false,
+                "type": "string",
+                "pattern": "^#([A-Fa-f0-9]{6})$",
+                "$comment": "a css color, from #FFFFFF to #000000'"
+            },
+            "style": {
+                "type": "object",
+                "required": [
+                    "bold",
+                    "italic",
+                    "underline"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                    "bold": {
+                        "type": "boolean"
+                    },
+                    "italic": {
+                        "type": "boolean"
+                    },
+                    "underline": {
+                        "type": "boolean"
+                    }
+                },
+                "$comment": "object containing stylistic properties for text theme attributes"
+            }
+        },
+        "4D": {
+            "additionalProperties": false,
+            "properties": {
+                "commands": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "comments": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "constants": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "entity_member": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "errors": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "fields": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "indexed-fields": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "interprocess_variables": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "keywords": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "local_variables": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "member": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "memberFunc": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "methods": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "parameters": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "plain_text": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "plug_ins": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "process_variables": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "tables": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "thread-safe-commands": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "thread-safe-methods": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                }
+            }
+        },
+        "SQL": {
+            "additionalProperties": false,
+            "properties": {
+                "comparisons": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "debug": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "function_keywords": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "keywords": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "names": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "normal": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "numbers": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "strings": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                }
+            }
+        },
+        "JSON": {
+            "additionalProperties": false,
+            "properties": {
+                "errors": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "escapeSequences": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "identifiers": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "keywords": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "normal": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "numbers": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                },
+                "strings": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color",
+                        "style"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        },
+                        "style": {
+                            "$ref": "#/definitions/types/style"
+                        }
+                    }
+                }
+            }
+        },
+        "otherStyles": {
+            "additionalProperties": false,
+            "properties": {
+                "back_color": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        }
+                    }
+                },
+                "cursor_line_back_color": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        }
+                    }
+                },
+                "cursor_line_color": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        }
+                    }
+                },
+                "execution_line_back_color": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        }
+                    }
+                },
+                "execution_line_frame_color": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        }
+                    }
+                },
+                "hilite_back_color": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        }
+                    }
+                },
+                "hilite_block_back_color": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        }
+                    }
+                },
+                "matching_parenthesis_color": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        }
+                    }
+                },
+                "protected_color": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        }
+                    }
+                },
+                "same_word_back_color": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        }
+                    }
+                },
+                "suggestion_color": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        }
+                    }
+                },
+                "selection_back_color": {
+                    "additionalProperties": false,
+                    "required": [
+                        "color"
+                    ],
+                    "properties": {
+                        "color": {
+                            "$ref": "#/definitions/types/color"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "additionalProperties": false,
+    "properties": {
+        "4D": {
+            "$ref": "#/definitions/4D"
+        },
+        "SQL": {
+            "$ref": "#/definitions/SQL"
+        },
+        "JSON": {
+            "$ref": "#/definitions/JSON"
+        },
+        "otherStyles": {
+            "$ref": "#/definitions/otherStyles"
+        },
+        "fontName": {
+            "type": "string"
+        },
+        "fontSize": {
+            "type": "number"
+        },
+        "__inheritedFrom__": {
+            "type": "string"
+        }
+    }
+}

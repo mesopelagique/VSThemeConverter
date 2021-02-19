@@ -33,9 +33,10 @@ End if
 
 $theme:=cs:C1710.Theme.new($themeObject)
 
-If (String:C10($type)="dark")
-	$theme["__inheritedFrom__"]:="defaultDarkTheme"
-Else 
-	$theme["__inheritedFrom__"]:="defaultTheme"
-End if 
+Case of 
+	: (String:C10($type)="dark")
+		$theme["__inheritedFrom__"]:="defaultDarkTheme"
+	Else 
+		$theme["__inheritedFrom__"]:="defaultTheme"
+End case 
 
