@@ -50,6 +50,8 @@
         "hilite_block_back_color": "editor.selectionHighlightBackground editor.lineHighlightBackground",
         "matching_parenthesis_back_color": "focusBorder meta.decorator comment",
         "same_word_back_color": "comment",
-        "suggestion_color": "comment"
+        "suggestion_color": "comment",
+        "protected_color": "to be described",
+        "selection_back_color" : "selection color"
     }
 }
