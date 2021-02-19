@@ -1,6 +1,5 @@
 ﻿{
     "4D": {
-        "comment": "comment",
         "comments": "comment",
         "commands": "support.function constant.numeric.decimal.js markup.bold",
         "constants": "constant.language constant",
