@@ -56,6 +56,7 @@ or you could change all theme font using [SetFontToAllTheme](Project/Sources/Met
 ## Limitations
 
 - color with alpha (RGBA) : alpha component is removed
+- some vs code theme have comments inside JSON, not all are removed #1
 
 ## Other components
 
