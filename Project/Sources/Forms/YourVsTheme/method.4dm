@@ -12,7 +12,7 @@ Case of
 			If (Length:C16($file.name)>0)
 				$archive:=ZIP Read archive:C1637($file)
 				For each ($theme; FindVSThemeFiles($archive.root; 4))
-					Form:C1466.themes.push(New object:C1471("archive"; $archive; "theme"; $theme))
+					Form:C1466.themes.push(New object:C1471("archive"; $archive; "theme"; $theme; "bgColor"; Choose:C955($dst.file($theme.fullName).exists; "#F29957"; "")))
 				End for each 
 			End if 
 		End for each 

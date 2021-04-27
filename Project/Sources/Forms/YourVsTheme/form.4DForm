@@ -1,4 +1,4 @@
-﻿{
+{
 	"$4d": {
 		"version": "1",
 		"kind": "form"
@@ -28,7 +28,7 @@
 		"onTimer",
 		"onBoundVariableChange"
 	],
-	"windowTitle": "window title",
+	"windowTitle": "Convert your vs code theme",
 	"destination": "detailScreen",
 	"pages": [
 		{
@@ -40,8 +40,8 @@
 					"type": "listbox",
 					"left": 22,
 					"top": 15,
-					"width": 530,
-					"height": 505,
+					"width": 631,
+					"height": 500,
 					"events": [],
 					"listboxType": "collection",
 					"dataSource": "Form:C1466.themes",
@@ -59,7 +59,10 @@
 							"footer": {
 								"name": "Footer2"
 							},
-							"width": 256
+							"width": 256,
+							"fill": "automatic",
+							"rowFillSource": "This:C1470.bgColor",
+							"method": "ObjectMethods/Column2.4dm"
 						},
 						{
 							"header": {
@@ -71,7 +74,8 @@
 								"name": "Footer1"
 							},
 							"dataSource": "This:C1470.theme.path",
-							"width": 256
+							"width": 350,
+							"rowFillSource": "This:C1470.bgColor"
 						}
 					]
 				},
@@ -98,17 +102,30 @@
 						"onClick"
 					],
 					"method": "ObjectMethods/Button1.4dm"
+				},
+				"Button2": {
+					"type": "button",
+					"text": "Paste a github url",
+					"top": 536,
+					"left": 508,
+					"width": 145,
+					"height": 29,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button2.4dm"
 				}
 			}
 		}
 	],
 	"method": "method.4dm",
-	"geometryStamp": 32,
+	"geometryStamp": 40,
 	"editor": {
 		"activeView": "View 1",
 		"defaultView": "View 1",
 		"views": {
 			"View 1": {}
 		}
-	}
+	},
+	"colorScheme": "dark"
 }
