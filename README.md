@@ -6,9 +6,15 @@
 [![license][license-shield]][license-url]
 [![discord][discord-shield]][discord-url]
 
-Convert Visual Studio Code theme to 4D theme
+Convert Visual Studio Code theme to 4D theme.
 
-## How to launch a convertion
+## How to
+
+Open the database on macOS and select the themes you want to convert
+
+![Screenshot](https://github.com/mesopelagique/VSThemeConverter/raw/gh-pages/Screenshot.png)
+
+## Information on database code
 
 ### Theme installed in your Visual Studio Code app
 
