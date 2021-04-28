@@ -1,4 +1,4 @@
-# VSThemeConverter
+﻿# VSThemeConverter
 [![language][code-shield]][code-url]
 [![language-top][code-top]][code-url]
 ![code-size][code-size]
@@ -14,31 +14,7 @@ Open the database on macOS and select the themes you want to convert
 
 ![Screenshot](https://github.com/mesopelagique/VSThemeConverter/raw/gh-pages/Screenshot.png)
 
-## Information on database code
-
-### Theme installed in your Visual Studio Code app
-
-Launch the `YourVsTheme` form to convert all or select ones.
-
-or launch `FromVsCodeInstalled`
-
-> Work only on macOS
-
-### Theme on github
-
-Launch `GitURLRequest`. A prompt will ask you to paste the url.
-
-> A git clone will be done in your temp directory, a conversion will be done, then temp directory is cleaned
-
-### Theme on file system
-
-Put the theme in [Resources/vs](Resources/vs) (you could git clone, unzip copy paste etc.. inside)
-
-Then run `CParti` method.
-
-The result will be installed directly into your 4d theme folder
-
-## Customize behaviour
+## Customize behaviours
 
 ### Fix missing keys
 
