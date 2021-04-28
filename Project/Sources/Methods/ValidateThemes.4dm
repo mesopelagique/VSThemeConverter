@@ -14,8 +14,6 @@ For each ($file; Folder:C1567(fk editor theme folder:K87:23).files())
 			$theme["JSON"]:=New object:C1471()
 		End if 
 		
-		OB REMOVE:C1226($theme["otherStyles"]; "matching_parenthesis_back_color")
-		
 		$result:=JSON Validate:C1456($theme; $schema)
 		If ($result.success)
 			$success[$file.name]:=$result

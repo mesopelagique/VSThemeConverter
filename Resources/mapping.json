@@ -48,10 +48,10 @@
         "execution_line_frame_color": "editor.selectionBackground",
         "hilite_back_color": " editor.selectionBackground selection.background",
         "hilite_block_back_color": "editor.selectionHighlightBackground editor.lineHighlightBackground",
-        "matching_parenthesis_back_color": "focusBorder meta.decorator comment",
+        "matching_parenthesis_color": "focusBorder meta.decorator comment",
         "same_word_back_color": "editor.findMatchBackground editorOverviewRuler.findMatchForeground comment",
         "suggestion_color": "comment",
         "protected_color": "string.regexp",
-        "selection_back_color" : "selection.background"
+        "selection_back_color": "selection.background"
     }
 }
