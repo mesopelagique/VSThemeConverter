@@ -6,12 +6,15 @@ var $pref : 4D:C1709.File
 $pref:=Folder:C1567(fk user preferences folder:K87:10).file("4D Preferences v"+Substring:C12(Application version:C493; 1; 2)+".4DPreferences")
 
 If ($pref.exists)
+	var $domRoot; $dom : Text
+	
 	// the theme name <theme theme_name="synthwave-color-theme"/>
 	$domRoot:=DOM Parse XML source:C719($pref.platformPath)
-	
+	var $color_scheme : Text
 	$color_scheme:="inherited"
 	
 	$dom:=DOM Find XML element:C864($domRoot; "//com.4d/general")
+	var $mOnError : Text
 	$mOnError:=Method called on error:C704
 	ON ERR CALL:C155("void")
 	DOM GET XML ATTRIBUTE BY NAME:C728($dom; "color_scheme"; $color_scheme)

@@ -9,6 +9,7 @@ Class constructor($object : Object)
 	
 Function toObject()->$obj : Object
 	$obj:=New object:C1471()
+	var $key : Text
 	For each ($key; This:C1470)
 		If (This:C1470[$key]#Null:C1517)
 			If (This:C1470[$key].toObject#Null:C1517)

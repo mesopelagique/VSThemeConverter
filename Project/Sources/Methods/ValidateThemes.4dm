@@ -14,6 +14,7 @@ For each ($file; Folder:C1567(fk editor theme folder:K87:23).files())
 			$theme["JSON"]:=New object:C1471()
 		End if 
 		
+		var $result : Object
 		$result:=JSON Validate:C1456($theme; $schema)
 		If ($result.success)
 			$success[$file.name]:=$result

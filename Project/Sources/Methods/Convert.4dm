@@ -53,7 +53,16 @@ If ($themeObject#Null:C1517)
 	$dstTheme:=$theme.to4DTheme()
 	
 	var $dstFile : 4D:C1709.File
-	$dstFile:=$dst.file($themeFile.fullName)
+	If ($themeFile.fullName="defaultTheme.json")
+		$parent:=$themeFile.parent
+		While ($parent#Null:C1517)
+			$lastparent:=$parent
+			$parent:=$parent.parent
+		End while 
+		$dstFile:=$dst.file($lastparent.fullName+".json")
+	Else 
+		$dstFile:=$dst.file($themeFile.fullName)
+	End if 
 	
 	$dstFile.setText(JSON Stringify:C1217($dstTheme.toObject(); *))
 Else 

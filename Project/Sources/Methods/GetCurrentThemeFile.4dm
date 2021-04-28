@@ -1,6 +1,7 @@
 //%attributes = {}
 #DECLARE()->$file : 4D:C1709.File
 
+var $name : Text
 
 $name:=GetCurrentThemeName
 If (Length:C16($name)>0)
@@ -9,6 +10,7 @@ If (Length:C16($name)>0)
 	
 Else 
 	
+	var $folder : 4D:C1709.Folder
 	$folder:=Folder:C1567(fk applications folder:K87:20)
 	If (Is macOS:C1572)
 		$folder:=$folder.folder("Contents")

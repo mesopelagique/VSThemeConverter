@@ -81,7 +81,9 @@ Function to4DTheme()->$theme : cs:C1710.Theme
 	
 	
 	$theme:=DefaultTheme(String:C10(This:C1470.type))
+	var $mapping : Object
 	$mapping:=JSON Parse:C1218(Folder:C1567(fk resources folder:K87:11).file("mapping.json").getText())
+	var $cat : Text
 	For each ($cat; $mapping)
 		For each ($key; $mapping[$cat])
 			This:C1470.apply($theme; $cat; $key; $mapping[$cat][$key])

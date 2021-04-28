@@ -25,7 +25,7 @@ Class constructor($object : Object)
 	// convert to 4d font style
 Function toFontStyle()->$style : cs:C1710.FontStyle
 	$style:=cs:C1710.FontStyle.new()
-	
+	var $fontStyle : Text
 	$fontStyle:=String:C10(This:C1470.settings.fontStyle)  // XXX check if only string or could be a collection
 	
 	$style.bold:=Position:C15("bold"; $fontStyle)>0
