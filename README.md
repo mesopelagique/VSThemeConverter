@@ -14,6 +14,8 @@ Open the database on macOS and select the themes you want to convert
 
 ![Screenshot](https://github.com/mesopelagique/VSThemeConverter/raw/gh-pages/Screenshot.png)
 
+Then the converted themse will be put in the default 4d theme folder automatically. Just go to 4D setting to select the wanted one.
+
 ## Customize behaviours
 
 ### Fix missing keys
