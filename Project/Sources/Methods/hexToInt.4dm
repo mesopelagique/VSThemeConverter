@@ -1,9 +1,9 @@
 //%attributes = {}
 C_LONGINT:C283($0)  //nibble
-C_TEXT:C284(1; $1)  //hex char
+C_TEXT:C284($1)  //hex char
 
 C_LONGINT:C283($ve_nibble)  //nibble
-C_TEXT:C284(1; $va_hex)  //hex char
+C_TEXT:C284($va_hex)  //hex char
 
 If (Count parameters:C259>0)
 	$va_hex:=$1

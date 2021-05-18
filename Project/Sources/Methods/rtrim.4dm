@@ -5,7 +5,7 @@ $result:=$text
 $l:=Length:C16($result)
 If ($l>0)
 	$pos:=1
-	While (($l>=$pos) & (charAt($result; $pos)=" ")))
+	While (($l>=$pos) & (charAt($result; $pos)=" "))
 		$pos:=$pos+1
 	End while 
 	If ($pos>1)
