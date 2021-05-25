@@ -1,3 +1,7 @@
 Resources/vs
 Data
 Resources/all
+userPreferences.*
+Project/DerivedData/
+*.4DD
+*.journal
