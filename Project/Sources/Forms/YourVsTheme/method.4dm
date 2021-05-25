@@ -26,8 +26,10 @@ Case of
 								$lastparent:=$parent
 								$parent:=$parent.parent
 							End while 
+							If ($lastparent#Null:C1517)
+								$converted:=$dst.file($lastparent.fullName+".json").exists
+							End if 
 						End if 
-						$converted:=$dst.file($lastparent.fullName+".json").exists
 					End if 
 					
 					Form:C1466.themes.push(New object:C1471("archive"; $archive; "theme"; $theme; "bgColor"; Choose:C955($converted; "#f29957"; Null:C1517)))
