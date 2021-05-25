@@ -1,8 +1,9 @@
-﻿# VSThemeConverter
+# VSThemeConverter
 [![language][code-shield]][code-url]
 [![language-top][code-top]][code-url]
 ![code-size][code-size]
 [![release][release-shield]][release-url]
+[![build](https://github.com/mesopelagique/VSThemeConverter/actions/workflows/build.yml/badge.svg)](https://github.com/mesopelagique/VSThemeConverter/actions/workflows/build.yml)
 [![license][license-shield]][license-url]
 [![discord][discord-shield]][discord-url]
 
