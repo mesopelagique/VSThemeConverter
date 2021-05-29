@@ -1,40 +1,21 @@
 //%attributes = {}
-
-
-$copyInComponent:=Not:C34(Shift down:C543)
-
+var $url : Text
 $url:=Request:C163("Provide git URL of theme")
 
 If (Length:C16($url)>0)
-	var $tmp : 4D:C1709.Folder
-	$tmp:=Folder:C1567(Temporary folder:C486; fk platform path:K87:2).folder(Generate UUID:C1066)
-	$tmp.create()
 	
-	var $cmd; $in; $out; $err : Text
-	$cmd:="git"
-	If (Is Windows:C1573)
-		$cmd:=$cmd+".exe"
-	End if 
-	$cmd:=$cmd+" clone "+$url+" '"+$tmp.path+"'"
-	
-	LAUNCH EXTERNAL PROCESS:C811($cmd; $in; $out; $err)
-	
+	var $dst : 4D:C1709.Folder
 	$dst:=Folder:C1567(fk editor theme folder:K87:23)
 	
-	For each ($theme; FindVSThemeFiles($tmp; 1))
-		
-		If ($copyInComponent)
-			
-			$theme.copyTo(Folder:C1567(fk resources folder:K87:11).folder("vs"))
-			
-		End if 
-		
-		Convert($theme; $dst)
-		
-	End for each 
+	var $themes : Collection
+	$themes:=GitURLConvert($url; $dst)
 	
-	$tmp.delete(Delete with contents:K24:24)
-	
-	SHOW ON DISK:C922($dst.platformPath)
-	
+	// XXX alternatively we could show one of $themes
+	If ($themes.length>0)
+		SHOW ON DISK:C922($themes[0].platformPath)
+	Else 
+		SHOW ON DISK:C922($dst.platformPath)
+	End if 
 End if 
+
+$0:=$dst
