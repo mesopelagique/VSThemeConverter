@@ -24,7 +24,8 @@
 	"color": {
 		"methods": [
 			"brightnessByColor",
-			"normalizeColor"
+			"normalizeColor",
+			"test_color"
 		]
 	},
 	"Convert": {
@@ -66,7 +67,8 @@
 			"Str"
 		],
 		"methods": [
-			"hexToInt"
+			"hexToInt",
+			"test_hexToInt"
 		],
 		"classes": [
 			"JSONFix"
