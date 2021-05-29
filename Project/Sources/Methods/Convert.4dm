@@ -1,6 +1,5 @@
 //%attributes = {}
-#DECLARE($themeFile : 4D:C1709.File; $dst : 4D:C1709.Folder)
-
+#DECLARE($themeFile : 4D:C1709.File; $dst : 4D:C1709.Folder)->$dstFile : 4D:C1709.File
 
 If (Not:C34($dst.exists))
 	$dst.create()
@@ -52,7 +51,6 @@ If ($themeObject#Null:C1517)
 	var $dstTheme : cs:C1710.Theme
 	$dstTheme:=$theme.to4DTheme()
 	
-	var $dstFile : 4D:C1709.File
 	If ($themeFile.fullName="defaultTheme.json")
 		$parent:=$themeFile.parent
 		While ($parent#Null:C1517)
