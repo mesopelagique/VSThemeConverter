@@ -10,7 +10,7 @@
         "interprocess_variables": "variable.language",
         "local_variables": "variable",
         "memberFunc": "support.function entity.name.function variable.function",
-        "methods": "meta.method variable.function support.function",
+        "methods": "meta.method variable.function support.function entity.name.function",
         "parameters": "Variable",
         "plain_text": "foreground editor.foreground",
         "plug_ins": "entity.name.tag",
